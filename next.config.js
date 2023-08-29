@@ -1,8 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-
-    domains: ['https://media-2.api-sports.io/football/players/:path*']
+  
+    images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'media-2.api-sports.io',
+        },
+      ],
+    
+   // domains: ['https://media-2.api-sports.io/football/players/:path*']
    
    
   
