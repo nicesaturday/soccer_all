@@ -5,10 +5,26 @@ const nextConfig = {
       remotePatterns: [
         {
           protocol: 'https',
+          hostname: 'media-1.api-sports.io',
+        },
+        {
+          protocol: 'https',
           hostname: 'media-2.api-sports.io',
         },
+        {
+          protocol: 'https',
+          hostname: 'media-3.api-sports.io',
+        },
+        {
+          protocol: 'https',
+          hostname: 'media-4.api-sports.io',
+        },
+
+
+
+
       ],
-    
+   
    // domains: ['https://media-2.api-sports.io/football/players/:path*']
    
    
@@ -19,6 +35,7 @@ const nextConfig = {
     async rewrites() {
       return [
         {
+          //cors 경로 우회
           source: "/:path*",
           destination: "http://api.football-data.org/v4/:path*",
         },
