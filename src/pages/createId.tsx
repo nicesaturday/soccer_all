@@ -52,13 +52,13 @@ const CreateId = () => {
         <MenuLayout />
         <form onSubmit={handleSubmit(onValid)} className="flex flex-col justify-center items-center h-full pt-12 gap-8">
           <input {...register("email",{ required:true} )} placeholder="Email"/>
-          {data?.emailOk ?  <div id="createError">It's already exists email</div> : null}
+          {data?.emailOk ?  <div id="createError">It&apos;s already exists email</div> : null}
           <input {...register("password", {required:true})} placeholder="Password"/>      
           {data?.passwordCheckOk ?  <div id="createError">Password is not same</div> : null}
           <input {...register("passwordCheck", {required:true})} placeholder="PassworCheck"/>  
   
           <input {...register("name", {required:true})} placeholder="Nickname"/>    
-          {data?.nameOk ?  <div id="createError">It's already exists name</div> : null}  
+          {data?.nameOk ?  <div id="createError">It&apos;s already exists name</div> : null}  
         {loading ?<button className=" bg-lime-700">Loading...</button> : <button className=" bg-lime-500">Create New Id</button>}
 
       </form>

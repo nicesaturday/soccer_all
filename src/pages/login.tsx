@@ -49,7 +49,7 @@ const Login = () => {
         <MenuLayout />
         <form onSubmit={handleSubmit(onValid)} className="flex flex-col justify-center items-center h-full pt-12 gap-8">
           <input {...register("email",{ required:true} )} placeholder="Email"/>
-          {data?.emailOk ?  <div id="createError">It's not exists</div> : null}
+          {data?.emailOk ?  <div id="createError">It&apos;s not exists</div> : null}
           <input {...register("password", {required:true})} placeholder="Password"/>   
           {data?.passwordOk ?  <div id="createError">Password is different</div> : null}       
         {loading ?<button className=" bg-teal-700">Loading...</button> : <button className=" bg-teal-400">login</button>}

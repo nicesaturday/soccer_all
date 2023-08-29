@@ -6,6 +6,8 @@ import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form";
 import { TlsOptions } from "tls";
 import {motion} from "framer-motion";
+import Image from "next/image";
+
 
 interface FormAll {
     season?:number;
@@ -59,7 +61,7 @@ const cardsVars = {
 const MainGameC =  ({league}:propsLeague) => {
    const [game,setGame] = useState<TopInfo[]>();
     useEffect(()=>{
-        (async ()=> {
+        (async (league)=> {
 
             const options = {
                 method: 'GET',
@@ -145,7 +147,7 @@ const onValid = async (data:any) => {
                               <h3 className=" text-5xl text-center">{data?.league?.season}</h3>
                               <div className=" text-5xl text-center">{data?.league?.name}</div>
                                <div className="flex justify-around pb-7">
-                               <img src={data?.league?.logo} className=" w-36 h-36"/>
+                               <Image src={data?.league?.logo!} className=" w-36 h-36" alt="img"/>
                               </div>
                               </div>
                                 {data?.league?.standings?.map((data:any,i) => (
@@ -160,7 +162,7 @@ const onValid = async (data:any) => {
                                                 {i+1}
                                             </div>
                                             <div>
-                                                <img src={data?.team?.logo} className=" w-8 h-8"/>
+                                                <Image src={data?.team?.logo!} className=" w-8 h-8" alt="img"/>
                                             </div>
                                             <div className="flex">
                                                <div>win:{data?.all?.win}</div>

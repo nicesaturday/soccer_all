@@ -53,6 +53,7 @@ button{
 
     background-color: rgba(65, 196, 223, 0);
     margin-left: 10px;
+
 }
 
 p{
@@ -95,6 +96,7 @@ option{
     bottom: 0;
     width: 300px;
     background: #fff;
+   
 }
 
 svg {
@@ -103,3 +105,6 @@ svg {
     
 }
 
+#font{
+    font-family: 'Rubik', sans-serif;
+}
