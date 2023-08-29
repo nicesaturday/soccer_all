@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-      domains: ["localhost", "*"],
+    loader: 'imgix',
+    path: 'https://media-2.api-sports.io/football/players/',
+   
   
   },
     reactStrictMode: false,
