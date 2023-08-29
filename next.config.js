@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    loader: "imgix",
+    path: "https://media-1.api-sports.io/football/"
+  },
     reactStrictMode: false,
     swcMinify: true,
     async rewrites() {
@@ -13,3 +17,4 @@ const nextConfig = {
   };
   
   module.exports = nextConfig;
+  
