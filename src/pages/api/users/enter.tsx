@@ -21,13 +21,13 @@ async function handler (req:NextApiRequest,res:NextApiResponse)  {
         }
     })
    }
-    
+ 
    
-    const passwordCheck = await bcrypt.hash(password,5);
+  
     const passwordCheck2 = user?.password!;
     const passwordFinalCheck = await bcrypt.compare(password,passwordCheck2);
-    if(!user) {
-        console.log(req.session)
+    if(user == null ) {
+      
       return res.status(401).json({emailOk:true})
     } else if(passwordFinalCheck == false){
 

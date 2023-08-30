@@ -98,20 +98,18 @@ const MainPlayerC = ({league}:Propstype) => {
               };
               
               try {
-                  console.log(league)
+             
                   const response = await axios.request(options);
-                  console.log(response.data.response.map((data:any) => data));
                   const realData:any = response.data.response.map((data:any) => data);
                   setPlay(realData)
               } catch (error) {
-                  console.error(error);
+                 
               }
             
             })()
 
     },[]) 
     const {register,formState:{errors},handleSubmit,setError} = useForm<FormAll>();
-console.log(errors.season)
 const onValid = async (data:any) => {
     const options = {
         method: 'GET',
@@ -128,7 +126,6 @@ const onValid = async (data:any) => {
       
       try {
                   const response = await axios.request(options);
-                  console.log(response.data.response.map((data:any) => data),"YYYY");
                   const realData:any = response.data.response.map((data:any) => data);
                   setPlay(realData)
           setSeason(data.season);

@@ -31,7 +31,7 @@ const variants = {
 const Chat = () => {
   const router = useRouter();
   const {data,isLoading} = useSWR<ChatData>("/api/chat/get");
-     console.log(data,"SSQQQ")
+   
   const [isOpen,setIsOpen] = useState();
 
 

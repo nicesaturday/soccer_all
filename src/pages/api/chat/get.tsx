@@ -6,7 +6,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 async function ChatGet(req:NextApiRequest,res:NextApiResponse) {
 
    const dataAll = await client.chat.findMany();
-   console.log(dataAll,"really?");
    return res.status(200).json({ok:true,dataAll})
 
    

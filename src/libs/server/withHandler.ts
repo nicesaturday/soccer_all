@@ -22,7 +22,7 @@ export default function withHandler({
 }:ConfigType) {
     return async function(req:NextApiRequest,res:NextApiResponse) : Promise<any> {
         if(req.method && !methods.includes(req.method as any)) {
-            console.log("기모찌")
+     
             return res.status(405).end(); 
         }
         if(isprivate && !req.session.user) {
@@ -32,8 +32,9 @@ export default function withHandler({
             await handler(req,res)
         }         
         catch(error){
-            console.log("스고이")
-            return res.status(500).json({error}) 
+          
+            return res.status(500).json({error,emailOk:true})  
+            
         }
     }
 }

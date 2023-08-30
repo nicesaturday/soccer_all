@@ -33,7 +33,7 @@ const CreateId = () => {
    const {register,handleSubmit} = useForm<createForm>();
    const [enter,{loading,error,data}] = useMutation<CreateMutationResult>(`/api/users/create`);
    const onValid = (d:createForm) => {
-    console.log(d,"eee")
+
      enter(d) //데이터 서버에 넣고 res.data가져옴
    }
    if(data?.createdOk == true) {
@@ -46,8 +46,7 @@ const CreateId = () => {
     );
     
    }
-   console.log(error,"QQAAS")
-   console.log(data,"TTTAS");
+
     return(
         <>
         <MenuLayout />

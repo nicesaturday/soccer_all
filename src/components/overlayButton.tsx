@@ -11,7 +11,7 @@ interface LogOut {
 
 
 const OverLay = () => {
-  const {data,mutate} = useSWR("/api/users/me");
+  const {data,mutate} = useSWR("/api/users/me"); //로그인 쿠키 확인 (재로그인 방지)
   const router = useRouter();
     const onLogin = () => {
         router.push(`/login`);
@@ -21,24 +21,23 @@ const OverLay = () => {
     }
     const onLogout = async () => {
       const data = await fetch("/api/users/out").then((response) => response.json())
-      console.log(data,"훅??")
       if(data?.ok) {
         if(router.pathname == '/') {
          await router.replace({
             pathname: `/`,
-            query: {logoutMessage:"Loguted!!"}
+            query: {logoutMessage:"Logouted!!"}
           },`/`);
-          router.reload();
+          router.reload(); // 메인페이지에서 로그 아웃시에 리로드로 화면 클리어
         } else {
           router.push({
             pathname: `/`,
-            query: {logoutMessage:"Loguted!!"}
+            query: {logoutMessage:"Logouted!!"}
           },`/`);
         }
       } else{
         router.push({
           pathname: `/`,
-          query: {logoutMessage:"it was failed"}
+          query: {logoutMessage:"it was failed"}  //이상 경로 확인
         },`/`);
       }
     }

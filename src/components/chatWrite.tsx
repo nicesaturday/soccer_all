@@ -50,7 +50,6 @@ const ChatWrite = () => {
       }
     },[data])
     const onPost = (data:FormData) => {
-      console.log(data,errors,"gimo")
       postfn(data);
      // router.replace("/chat");
       

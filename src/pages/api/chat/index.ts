@@ -8,13 +8,11 @@ import { useRouter } from "next/router";
 async function ChatGetId(req:NextApiRequest,res:NextApiResponse) {
 
    const {id} = req.query
-   console.log(id,"JAUU")
    const data = await client.chat.findFirst({
       where: {
          id: Number(id),
       }
    })
-   console.log(id)
    return res.status(200).json({data});
 }
 

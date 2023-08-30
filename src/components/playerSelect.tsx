@@ -6,9 +6,7 @@ const PlayerSelect = () => {
     const router =  useRouter(); 
  
     const handleSelect = async (e:any) => {
-        if(e.target.id == undefined || null || "") {
-            e.stopImmediatePropagation()
-        }
+       
        router.push(`/player/${e.target.id}`);
         
     }

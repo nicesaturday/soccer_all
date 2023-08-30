@@ -78,7 +78,6 @@ const MainGameC =  ({league}:propsLeague) => {
               
               try {
                   const response = await axios.request(options);
-                  console.log(response.data.response);
                   setGame(response.data.response);
               } catch (error) {
                
@@ -87,7 +86,6 @@ const MainGameC =  ({league}:propsLeague) => {
     },[setGame]) 
 
 const {register,formState:{errors},handleSubmit,setError} = useForm<FormAll>();
-console.log(errors.season)
 const onValid = async (data:any) => {
     const options = {
         method: 'GET',
@@ -104,7 +102,6 @@ const onValid = async (data:any) => {
       
       try {
           const response = await axios.request(options);
-          console.log(response.data.response);
           setGame(response.data.response);
       } catch (error) {
        

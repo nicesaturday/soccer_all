@@ -5,7 +5,7 @@ import OverlayButton from '@/components/overlayButton';
 import { AnimatePresence,motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { SWRConfig } from "swr";
-import "../../public/static/fonts/style.css"
+
 
 
 

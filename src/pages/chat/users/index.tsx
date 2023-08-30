@@ -61,11 +61,9 @@ const ChatLayout = () => {
      const {data:underChatData} = useSWR<UnderSwrData>(id ? `/api/chat/underChat?id=${id}`  : null)
      const {data:userCheckData} = useSWR(`/api/users/me`);
      const onhandleSubmit = (data:any) => {
-      console.log(data,"UU")
       fn(data);
      }
-console.log(data ,"ok??")
-console.log(underChatData,"EKIEE??")
+
 
 
     return (

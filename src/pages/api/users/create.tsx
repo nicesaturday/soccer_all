@@ -7,15 +7,15 @@ import bcrypt from "bcryptjs";
 async function handler (req:NextApiRequest,res:NextApiResponse){
 
    const {email,password,passwordCheck,name} = req.body;
-   console.log(password,"GGAGA")
+
    const emailCheck =   await client.user.findUnique({
         where: {
             email
         },
    })
-   console.log(emailCheck?.email,"KIKI")
+
    if(emailCheck?.email == email ) {
-    console.log(emailCheck,"YAYAYA")
+
     return res.status(401).json({emailOk:true}); 
    } 
    //이메일 체크
@@ -32,7 +32,7 @@ async function handler (req:NextApiRequest,res:NextApiResponse){
     return res.status(401).json({nameOk:true}); 
    }
    const hashPassword = await bcrypt.hash(password,5);
-   console.log(hashPassword,"HAHAHA");
+ 
   let newUser = await client.user.create({
       data: {
         email,
@@ -41,7 +41,7 @@ async function handler (req:NextApiRequest,res:NextApiResponse){
 
       }
    })
-   console.log(newUser,"finish")
+  
    
   
 
