@@ -28,7 +28,7 @@ async function handler (req:NextApiRequest,res:NextApiResponse)  {
     const passwordFinalCheck = await bcrypt.compare(password,passwordCheck2);
     if(user == null) {
         console.log(req.session)
-      return res.status(401).json({emailOk:true})
+      return res.status(401).json({emailOk:false})
     } else if(passwordFinalCheck == false){
         console.log(passwordCheck,"nice")
        console.log(passwordCheck2,"gimo")   

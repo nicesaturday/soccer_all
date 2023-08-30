@@ -1,4 +1,5 @@
 import MenuLayout from "@/components/menuLayout";
+import Message from "@/components/message";
 import useMutation from "@/libs/client/useMutation";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
@@ -60,7 +61,7 @@ const CreateId = () => {
           <input {...register("name", {required:true})} placeholder="Nickname"/>    
           {data?.nameOk ?  <div id="createError">It&apos;s already exists name</div> : null}  
         {loading ?<button className=" bg-lime-700">Loading...</button> : <button className=" bg-lime-500">Create New Id</button>}
-
+        {router.query.loginMessage ? <Message message={router.query.loginMessage}></Message> : null}    
       </form>
     </>
     )

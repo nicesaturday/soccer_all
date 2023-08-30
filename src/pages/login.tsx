@@ -38,9 +38,13 @@ const Login = () => {
         pathname: `/`,
         query: {loginMessage:"Logined!!"}
       },`/`);
-      
+    } else if(data?.emailOk == false) {
+      router.push({
+        pathname: `/createid`,
+        query: {loginMessage:"Create your id!!"}
+      },`/createid`);
     }
-  }
+    }
  ,[data?.enterOk]) 
 
 
