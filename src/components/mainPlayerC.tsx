@@ -162,14 +162,12 @@ const onValid = async (data:any) => {
                 <div className="h-32">{play?.slice(0,1).map((data:any) => 
                   data?.statistics?.map((data:any,i:any) => 
                     <div key={i} className="flex justify-center h-30">
-                        <Image src={data?.league?.logo} alt="img"  width={50}
-              height={50}  />
+                        <Image src={data?.league?.logo} alt="img"  />
                         <div className="flex justify-center">
                           <p className="text-2xl">{season}</p>
                         <p className="text-2xl">{data?.league?.name}</p>
                         </div>
-                        <Image src={data?.league?.logo}alt="img"  width={50}
-              height={50} />
+                        <Image src={data?.league?.logo}alt="img"   />
                     </div>
                   )
                 )}</div>
@@ -189,8 +187,7 @@ const onValid = async (data:any) => {
         <div className=" text-3xl h-full hover:first-letter:">{i+1}</div>
         <div className=" w-32">
           <div>{data?.player?.name}</div>
-           <Image src={data?.player?.photo} alt="img"   width={50}
-              height={50} />
+           <Image src={data?.player?.photo} alt="img" />
         </div>
           <div>
             <ul>
@@ -213,8 +210,7 @@ const onValid = async (data:any) => {
                     <div>Passes: {data?.passes?.total} (key : {data?.passes?.key})</div>  
                 </div>  
                 <div>         
-                  <Image src={data?.team?.logo!} alt="img"   width={50}
-              height={50}  />
+                  <Image src={data?.team?.logo!} alt="img"    />
                   </div>
             </div>
         ))}
