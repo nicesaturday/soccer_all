@@ -61,7 +61,7 @@ const cardsVars = {
 const MainGameC =  ({league}:propsLeague) => {
    const [game,setGame] = useState<TopInfo[]>();
     useEffect(()=>{
-        (async (league)=> {
+        (async ()=> {
 
             const options = {
                 method: 'GET',
