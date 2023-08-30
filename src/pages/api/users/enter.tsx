@@ -13,7 +13,7 @@ async function handler (req:NextApiRequest,res:NextApiResponse)  {
        
    const {email,password} = req.body;
    let user;
-   console.log(email,"YAS")
+  
    if(email) {
     user = await client.user.findUnique({
         where: {
@@ -22,17 +22,15 @@ async function handler (req:NextApiRequest,res:NextApiResponse)  {
     })
    }
     
-    console.log(password,"yayaya")
+   
     const passwordCheck = await bcrypt.hash(password,5);
     const passwordCheck2 = user?.password!;
     const passwordFinalCheck = await bcrypt.compare(password,passwordCheck2);
-    if(user == null) {
+    if(!user) {
         console.log(req.session)
-      return res.status(401).json({emailOk:false})
+      return res.status(401).json({emailOk:true})
     } else if(passwordFinalCheck == false){
-        console.log(passwordCheck,"nice")
-       console.log(passwordCheck2,"gimo")   
-        console.log("fin")
+
         return res.status(401).json({passwordOk:true})
 
     } else{
