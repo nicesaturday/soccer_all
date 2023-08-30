@@ -147,7 +147,7 @@ const onValid = async (data:any) => {
                               <h3 className=" text-5xl text-center">{data?.league?.season}</h3>
                               <div className=" text-5xl text-center">{data?.league?.name}</div>
                                <div className="flex justify-around pb-7">
-                               <Image src={data?.league?.logo!} className=" w-36 h-36" alt="img"/>
+                               <Image src={data?.league?.logo!} className=" w-36 h-36" width={50} height={50} alt="img"/>
                               </div>
                               </div>
                                 {data?.league?.standings?.map((data:any,i) => (
@@ -162,7 +162,7 @@ const onValid = async (data:any) => {
                                                 {i+1}
                                             </div>
                                             <div>
-                                                <Image src={data?.team?.logo!} className=" w-8 h-8" alt="img"/>
+                                                <Image src={data?.team?.logo!} className=" w-8 h-8" width={50} height={50} alt="img"/>
                                             </div>
                                             <div className="flex">
                                                <div>win:{data?.all?.win}</div>
