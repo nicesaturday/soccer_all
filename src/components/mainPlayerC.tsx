@@ -194,7 +194,7 @@ const onValid = async (data:any) => {
                 <li></li>
             </ul>
           </div>
-            {data?.statistics?.map((data:Statistics) => (
+            {data?.statistics?.slice(0,1).map((data:Statistics) => (
             <div key={data.team?.id} className="flex justify-between w-full">
                 <div className="w-full">
                  <div className=" flex w-64 min-w-min">
