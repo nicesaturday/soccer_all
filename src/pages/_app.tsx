@@ -1,9 +1,7 @@
-import { Component } from 'react';
+
 import '../app/globals.css'
 import { AppProps } from 'next/app';
 import OverlayButton from '@/components/overlayButton';
-import { AnimatePresence,motion } from 'framer-motion';
-import { useRouter } from 'next/router';
 import { SWRConfig } from "swr";
 
 
@@ -11,7 +9,6 @@ import { SWRConfig } from "swr";
 
 function MyApp({ Component, pageProps }: AppProps) {
 
-   const router = useRouter();
   
       
     return(
@@ -21,16 +18,11 @@ function MyApp({ Component, pageProps }: AppProps) {
             fetch(url).then((response) => response.json()),
         }}
       >
-        <div className='h-full'>
-            <AnimatePresence>
-                <motion.div key={router.route}  
-                initial={{ opacity: 0, scale: 1}} 
-                animate={{ opacity:1 , scale: 1 }}
-                transition={{ duration: 2 }}>
+        <div className='w-full h-full'>
+      
                     <OverlayButton />
                     <Component {...pageProps}/>
-                </motion.div>
-            </AnimatePresence>
+  
         </div>
         </SWRConfig>
     )

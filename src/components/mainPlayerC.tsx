@@ -137,7 +137,7 @@ const onValid = async (data:any) => {
 
       <div className="min-w-fit h-full ">           
       <MenuLayout></MenuLayout>     
-                   {  <form onSubmit={handleSubmit(onValid)} className=" font-bold"> 
+                   {  <form onSubmit={handleSubmit(onValid)} className="fiexed  font-bold"> 
               <input {...register("season", {
                 minLength: {
                     message: "The season is a 4 number",
@@ -150,12 +150,12 @@ const onValid = async (data:any) => {
               })} placeholder="Season"
               className={`${(errors.season?.type == 'pattern') ? "border-red-500" : "border-cyan-500"}`}
               />
-              <button id="font" className=" bg-lime-400">search</button>
+              <button id="font" className=" bg-lime-400 w-20">search</button>
             </form>  }
 
             <div id="menuGrid" className="grid col-start-1 col-end-3 row-auto h-auto rounded-md shadow-lg shadow-black w-full">
              <PlayerSelect/>
-             <div id="mainBoardGrid" className="grid grid-cols-auto h-auto rounded-md shadow-lg shadow-black">
+             <div id="mainBoardGrid" className={`${!play ? "w-80" : "w-full"} grid grid-cols-auto h-auto rounded-md shadow-lg shadow-black`}>
                 <div className="h-32">{play?.slice(0,1).map((data:any) => 
                   data?.statistics?.map((data:any,i:any) => 
                     <div key={i} className="flex justify-center h-30">
@@ -170,7 +170,7 @@ const onValid = async (data:any) => {
                 )}</div>
     <div className="grid grid-rows-20 gap-5 w-full h-auto justify-center mb-5 ">
             
-        {!play ? (<h4 className=" text-slate-600 flex ">Loading...</h4>) :
+        {!play ? (<h4 className=" text-slate-600 flex w-8">Loading...</h4>) :
             
  ( 
     play?.length == 0 ? (<Noting/>) :

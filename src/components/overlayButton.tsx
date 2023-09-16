@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import { set } from "react-hook-form";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 
 interface LogOut {
@@ -43,13 +44,15 @@ const OverLay = () => {
     }
 
     
-   
+    const userAgent = typeof navigator === 'undefined' ? 'SSR' : navigator.userAgent;
+    const isAndroid = Boolean(userAgent.match(/Android/i));
+    const isIos = Boolean(userAgent.match(/iPhone|iPad|iPod/i));
   
  
 
     return (
-        <>
-          <div className="w-full h-full bg-slate-500/50 absolute">
+      
+          <div className="w-full h-full flex  absolute bg-slate-500/50">
             <motion.div
              initial={{ scale:0 }}
              animate={{ scale:1 ,transition:{duration:0.5 , delay:0.5}}}
@@ -62,7 +65,7 @@ const OverLay = () => {
 
             </motion.div>
           </div>
-        </>
+        
     )
 }
 

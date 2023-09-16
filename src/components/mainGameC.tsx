@@ -111,9 +111,9 @@ const onValid = async (data:any) => {
 
 
     return (
-        <div>
+        <div className="min-w-fit h-full ">
               <MenuLayout title="게임"></MenuLayout>
-                      {  <form onSubmit={handleSubmit(onValid)}> 
+                      {  <form onSubmit={handleSubmit(onValid)} className="fiexed  font-bold"> 
               <input {...register("season", {
                 minLength: {
                     message: "The season is a 4 number",
@@ -126,11 +126,11 @@ const onValid = async (data:any) => {
               })} placeholder="Season"
               className={`${(errors.season?.type == 'pattern') ? "border-red-500" : "border-cyan-500"}`}
               />
-              <button id="font" className=" bg-lime-400">search</button>
+              <button id="font" className=" bg-lime-400 w-20">search</button>
             </form>  }
              <div id="menuGrid">
          <GameSelect />
-            {!game ? ( <h4 className=" text-2xl w-full h-full flex justify-center items-center">Loading...</h4>) 
+            {!game ? ( <h4 className="w-80 text-2xl  h-full flex justify-center items-center">Loading...</h4>) 
             :
             (game?.length == 0 ? (<Noting/>) : 
                        (game?.map((data:TopInfo,i) => (
@@ -140,7 +140,7 @@ const onValid = async (data:any) => {
                                 animate="end" 
                                 key={i} 
                                 className="grid grid-rows-auto h-auto rounded-md shadow-lg shadow-black">
-                              <div className="flex justify-end pr-5 gap-5">
+                              <div className="flex justify-end pr-5 gap-5 ">
                               <h3 className=" text-5xl text-center">{data?.league?.season}</h3>
                               <div className=" text-5xl text-center">{data?.league?.name}</div>
                                <div className="flex justify-around pb-7">
